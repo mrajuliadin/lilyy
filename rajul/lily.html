@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Kamu ❤️</title>
+
+<style>
+body {
+    background: linear-gradient(to right, #b6ff81, #fad0c4);
+    font-family: Arial;
+    text-align: center;
+    padding: 50px;
+    color: black;
+}
+
+/* biar lebih rapi di HP */
+.container {
+    max-width: 300px;
+    margin: auto;
+}
+
+/* tombol */
+a, button {
+    display: block;
+    margin: 10px auto;
+    padding: 12px;
+    background: #ff4b5c;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Hai Sayang ❤️</h2>
+    <p>Kamu siap lihat sesuatu? 😳</p>
+
+    <a href="halamanfoto.html">Lihat Foto Kita 📸</a>
+    <a href="halamanvidio.html">Lihat Video Kita 🎥</a>
+
+    <p id="text"></p>
+    <button onclick="gombal()">Klik Aku 💕</button>
+</div>
+
+<script>
+function gombal(){
+    document.getElementById("text").innerHTML =
+    "Kamu itu halaman favorit aku...<br>yang selalu pengen aku buka setiap hari ❤️";
+}
+</script>
+
+</body>
+</html>

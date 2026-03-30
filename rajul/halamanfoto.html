@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foto Kita ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    background: #ff9a9e;
+    text-align: center;
+    color: white;
+    font-family: Arial;
+    padding: 20px;
+}
+
+/* GRID FOTO */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+/* FOTO */
+.gallery img {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+}
+
+/* GAMBAR MODAL */
+.modal-content {
+    display: block;
+    margin: 80px auto;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 20px;
+    transform: scale(0.8);
+    transition: 0.3s;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+/* CLOSE */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* TEXT */
+#caption {
+    margin-top: 10px;
+}
+
+/* BACK */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: #ff4b5c;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Foto Kita 📸</h2>
+
+<div class="gallery">
+    <img src="asset/lily1.jpeg" class="foto">
+    <img src="asset/lily2.jpeg" class="foto">
+    <img src="asset/lily3.jpeg" class="foto">
+    <img src="asset/lily4.jpeg" class="foto">
+    <img src="asset/lily5.jpeg" class="foto">
+    <img src="asset/lily6.jpeg" class="foto">
+    <img src="asset/lily7.jpeg" class="foto">
+</div>
+
+<p>Klik fotonya ya 😳</p>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img id="modal-img" class="modal-content">
+    <div id="caption"></div>
+</div>
+
+<button onclick="goBack()">Kembali</button>
+<script>
+function goBack(){
+    window.history.back();
+}
+</script>
+
+<script>
+const fotos = document.querySelectorAll(".foto");
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const caption = document.getElementById("caption");
+const close = document.querySelector(".close");
+
+fotos.forEach(img => {
+    img.onclick = function(){
+        modal.style.display = "block";
+        setTimeout(() => modal.classList.add("show"), 10);
+
+        modalImg.src = this.src;
+        caption.innerHTML = "Kamu selalu jadi favorit aku ❤️";
+    }
+});
+
+function closeModal(){
+    modal.classList.remove("show");
+    setTimeout(() => modal.style.display = "none", 300);
+}
+
+close.onclick = closeModal;
+
+modal.onclick = function(e){
+    if(e.target === modal){
+        closeModal();
+    }
+}
+</script>
+</body>
+</html>

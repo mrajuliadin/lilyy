@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Kita ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* CONTAINER */
+.box {
+    text-align: center;
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 350px;
+    backdrop-filter: blur(10px);
+}
+
+/* VIDEO */
+video {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+/* TEXT */
+p {
+    margin-top: 10px;
+    color: white;
+}
+
+/* BUTTON */
+a {
+    display: block;
+    margin-top: 15px;
+    padding: 10px;
+    background: #ff4b5c;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Video Kita 🎥</h2>
+
+    <video controls>
+        <source src="asset/rajul.mp4" type="video/mp4">
+    </video>
+
+    <p>Setiap momen sama kamu... selalu aku ulang terus ❤️</p>
+
+<button onclick="goBack()">Kembali</button>
+<script>
+function goBack(){
+    window.history.back();
+}
+</script>
+
+</div>
+
+</body>
+</html>
